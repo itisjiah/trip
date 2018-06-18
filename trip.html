@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Trip examples</title>
+    <link type="text/css" rel="stylesheet" href="Trip.js-master/dist/trip.min.css">
+  </head>
+  <style media="screen">
+
+  * {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+  }
+    .div{
+      display: block;
+      width: 200px;
+      height: 200px;
+      margin: 0 auto;
+      margin-top: 20%;
+    }
+
+    .first{
+      background-color: red;
+
+    }
+    .second{
+      background-color: grey;
+    }
+    .third {
+      background-color: pink;
+    }
+    .trip-skip, .trip-next, .trip-prev{
+      color: white;
+    }
+
+  </style>
+  <body>
+
+
+    <div class="div first step1 step2 step3">
+
+    </div>
+
+
+  <div class="div second">
+
+  </div>
+  <div class="div third">
+
+  </div>
+
+
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.js"></script>
+    <script type="text/javascript" src="Trip.js-master/dist/trip.min.js"></script>
+    <script type="text/javascript">
+
+
+
+    $(function() {
+        var trip = new Trip([
+          {
+            sel: $('.first'),
+            content: 'This is a red box',
+            // expose: true,
+            position: 's'
+          },
+          {
+            sel: $('.second'),
+            content: '<h2>Hello!</h2>',
+            position: 'e'
+            // expose: true
+          },
+          {
+            sel: $('.third'),
+            content : 'Pink Pink Pink',
+            position: 'w'
+          }
+        ], {
+          delay: -1,
+          showNavigation: true,
+          showCloseBox: true
+        });
+        trip.start();
+    });
+
+
+    </script>
+  </body>
+</html>
